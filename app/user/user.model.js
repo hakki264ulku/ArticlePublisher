@@ -10,10 +10,14 @@ const UserSchema = new mongoose.Schema({
     },
     Posts: [
         {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "Post"
         }
     ]
 })
 
-export default mongoose.Model("User", UserSchema)
+const UserModel =  mongoose.model("User", UserSchema)
+
+module.exports = {
+    UserModel
+}

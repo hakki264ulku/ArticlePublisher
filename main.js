@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const config = require('./config')
 const db = require("./app/database/db")
+const {RegisterUserRouters} = require("./app/user/user.router")
 
 /**
  * Run starts the server
@@ -24,6 +25,8 @@ async function Run() {
         res.status(200).send('Welcome to the "Article Publisher"')
     })
 
+    RegisterUserRouters(app)
+
     // catch 404 and forward to error handler
     app.use((req, res, next) => {
         const err = new Error('Not Found')
@@ -37,4 +40,4 @@ async function Run() {
     })
 }
 
-Run()   
+Run()

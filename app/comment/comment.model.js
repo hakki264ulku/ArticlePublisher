@@ -11,4 +11,8 @@ const CommentSchema = new mongoose.Schema({
     // { type: Schema.Types.ObjectId, ref: 'Event' }
 })
 
-export default mongoose.Model("Comment", CommentSchema)
+const CommetModel = mongoose.model("Comment", CommentSchema)
+
+module.exports = {
+    CommetModel
+}
